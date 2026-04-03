@@ -25,19 +25,27 @@ const MeshGrid = ({ nodes, rootP, stage, q, isAnimating }) => {
           let isMovingNow = false;
           let arrowDir = null;
           let arrowLabel = '';
+          let animDuration = 1;
+          let animDistance = 20;
 
           if (isAnimating && stage === 0 && rowShift > 0) {
             isMovingNow = true;
             arrowDir = 'right';
             arrowLabel = `+${rowShift}`;
+            animDuration = 2.0 / rowShift;
+            animDistance = 15 + (rowShift * 5);
           } else if (isAnimating && stage === 1 && node.wrappedRow) {
             isMovingNow = true;
             arrowDir = 'up';
             arrowLabel = `+1 (wrap)`;
+            animDuration = 2.0 / 1;
+            animDistance = 15 + (1 * 5);
           } else if (isAnimating && stage === 2 && colShift > 0) {
             isMovingNow = true;
             arrowDir = 'up';
             arrowLabel = `+${colShift}`;
+            animDuration = 2.0 / colShift;
+            animDistance = 15 + (colShift * 5);
           }
 
           return (
@@ -65,8 +73,8 @@ const MeshGrid = ({ nodes, rootP, stage, q, isAnimating }) => {
               {isMovingNow && arrowDir === 'right' && (
                 <motion.div 
                   initial={{ opacity: 0, x: 0 }}
-                  animate={{ opacity: 1, x: 20 }}
-                  transition={{ repeat: Infinity, duration: 1 }}
+                  animate={{ opacity: 1, x: animDistance }}
+                  transition={{ repeat: Infinity, duration: animDuration }}
                   style={{ position: 'absolute', right: '-25px', color: 'var(--glow-accent)', zIndex: 100 }}
                 >
                   <ArrowRight size={20} />
@@ -77,8 +85,8 @@ const MeshGrid = ({ nodes, rootP, stage, q, isAnimating }) => {
               {isMovingNow && arrowDir === 'up' && (
                 <motion.div 
                   initial={{ opacity: 0, y: 0 }}
-                  animate={{ opacity: 1, y: -20 }}
-                  transition={{ repeat: Infinity, duration: 1 }}
+                  animate={{ opacity: 1, y: -animDistance }}
+                  transition={{ repeat: Infinity, duration: animDuration }}
                   style={{ position: 'absolute', top: '-25px', color: 'var(--glow-secondary)', zIndex: 100 }}
                 >
                   <ArrowUp size={20} />
