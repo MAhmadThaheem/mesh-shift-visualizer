@@ -30,14 +30,14 @@ const MeshGrid = ({ nodes, rootP, stage, q, isAnimating }) => {
             isMovingNow = true;
             arrowDir = 'right';
             arrowLabel = `+${rowShift}`;
-          } else if (isAnimating && stage === 1 && colShift > 0) {
-            isMovingNow = true;
-            arrowDir = 'up';
-            arrowLabel = `+${colShift}`;
-          } else if (isAnimating && stage === 2 && node.wrappedRow) {
+          } else if (isAnimating && stage === 1 && node.wrappedRow) {
             isMovingNow = true;
             arrowDir = 'up';
             arrowLabel = `+1 (wrap)`;
+          } else if (isAnimating && stage === 2 && colShift > 0) {
+            isMovingNow = true;
+            arrowDir = 'up';
+            arrowLabel = `+${colShift}`;
           }
 
           return (

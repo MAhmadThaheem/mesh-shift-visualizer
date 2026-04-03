@@ -62,8 +62,8 @@ const ControlPanel = ({ p, setP, q, setQ, stage, handleNext, handleReset, isAnim
           disabled={stage >= 3 || isAnimating}
         >
           {stage === 0 ? <><Play size={18} /> Run Stage 1 (Row Shift)</> : 
-           stage === 1 ? <><SkipForward size={18} /> Run Stage 2 (Base Col Shift)</> : 
-           <><SkipForward size={18} /> Run Stage 3 (Compensate)</>}
+           stage === 1 ? <><SkipForward size={18} /> Run Stage 2 (Compensate Shift)</> : 
+           <><SkipForward size={18} /> Run Stage 3 (Base Col Shift)</>}
         </button>
         
         <button 

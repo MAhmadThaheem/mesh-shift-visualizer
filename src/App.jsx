@@ -9,7 +9,7 @@ const App = () => {
   const [p, setP] = useState(16);
   const [q, setQ] = useState(5);
   const [nodes, setNodes] = useState(initNodes(16));
-  const [stage, setStage] = useState(0); // 0: Init, 1: Row Shift Done, 2: Col Shift Done, 3: Compensate Done
+  const [stage, setStage] = useState(0); // 0: Init, 1: Row Shift Done, 2: Compensate Done, 3: Col Shift Done
   const [isAnimating, setIsAnimating] = useState(false);
   const rootP = Math.sqrt(p);
 
