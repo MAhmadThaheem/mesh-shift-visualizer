@@ -12,7 +12,7 @@ A full-stack interactive web application that simulates and visualizes circular 
 3. Run `npm run dev` to start the local development server via Vite.
 
 ## Live Deployment URL
-- [Vercel Deployment URL Placeholder]
+- https://mesh-shift-visualizer.vercel.app/
 
 ## Algorithms Implemented
 - **Stage 1 — Row Shift:**  (`q mod √p`)
